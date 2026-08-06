@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ground:      #131e15;
+  --color-ground-mid:  #1c2b1e;
+  --color-ground-soft: #24371f;
+
+  --color-paper:       #faf6f0;
+  --color-paper-dim:   #ece4d9;
+
+  --color-rose:        #f2c4ce;
+  --color-rose-deep:   #d9959f;
+
+  --color-champagne:   #f0e8d5;
+  --color-gold:        #c9a84c;
+  --color-gold-warm:   #e4cf9a;
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-ground);
+    color: var(--color-paper);
+    font-family: var(--font-body);
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-rose);
+    color: var(--color-ground);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-gold-warm);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 0.94;
+    letter-spacing: -0.015em;
+  }
+
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+  }
+}
