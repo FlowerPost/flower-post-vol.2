@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero/Hero";
+import { LidReveal } from "@/components/scroll/LidReveal";
 import { StoryScene } from "@/components/story/StoryScene";
 import { ProductScene } from "@/components/product/ProductScene";
 import { ConfiguratorTeaser } from "@/components/configurator/ConfiguratorTeaser";
@@ -14,7 +15,8 @@ import { Footer } from "@/components/layout/Footer";
  *
  * Емоционална последователност (PROJECT_VISION):
  *   Hero         → Curiosity, Wonder
- *   Story        → Discovery
+ *   LidReveal    → Discovery (сигнатурният момент — капакът се отваря)
+ *   Story        → Discovery, продължена в думи
  *   Product      → Connection, Trust
  *   Configurator → Personalization, Commitment
  *   Trust        → затвърждава доверието преди покупка
@@ -23,6 +25,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <LidReveal />
       <StoryScene />
       <ProductScene />
       <ConfiguratorTeaser />
