@@ -43,8 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bg" className={`${cormorant.variable} ${inter.variable}`}>
-      <body>
+    <html
+      lang="bg"
+      className={`${cormorant.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
+      <body suppressHydrationWarning>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
