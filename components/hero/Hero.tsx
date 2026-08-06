@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -79,23 +80,31 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center pb-20 text-center">
-        <motion.span
+        {/* Истинското лого — извлечено с прозрачност от master файла,
+            не текстова реконструкция. Ляга на тъмния фон така, както
+            е замислено да свети върху шампанската кутия. */}
+        <motion.div
           variants={v}
           initial="hidden"
           animate="visible"
           transition={{ delay: d(1.0) }}
-          className="eyebrow"
-          style={{ color: "color-mix(in srgb, var(--color-gold-warm) 65%, transparent)" }}
         >
-          flower post
-        </motion.span>
+          <Image
+            src="/brand/logo-mark.png"
+            alt="flower post — made to brighten your day"
+            width={900}
+            height={706}
+            priority
+            style={{ width: "min(58vw, 260px)", height: "auto" }}
+          />
+        </motion.div>
 
         <motion.h1
           variants={v}
           initial="hidden"
           animate="visible"
           transition={{ delay: d(1.45) }}
-          className="display mt-7"
+          className="display mt-10"
           style={{ fontSize: "clamp(2.8rem, 11vw, 7.5rem)", color: "var(--color-paper)" }}
         >
           Някой мисли
